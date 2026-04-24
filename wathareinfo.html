@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wathare Infotech Solutions · IIoT Products</title>
+  <!-- meta, bootstrap, fonts, aos (same as original) -->
+  <meta name="description" content="Wathare Infotech Solutions – IIoT, machine monitoring, predictive maintenance and digital transformation.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* === ALL ORIGINAL STYLES (HOME, ABOUT, ETC.) === */
+    * { font-family: 'Inter', sans-serif; }
+    body { overflow-x: hidden; background-color: #f8fafc; }
+    .top-bar {
+      background: #0b1c2f;
+      color: #b0c4de;
+      font-size: 0.9rem;
+      padding: 10px 0;
+      border-bottom: 1px solid #1e2f44;
+    }
+    .top-bar a { color: #f0f4fa; text-decoration: none; margin-right: 20px; transition: 0.2s; }
+    .top-bar a:hover { color: #ffb347; }
+    .top-bar .social-icons i { font-size: 1.1rem; margin-left: 15px; color: #b0c4de; transition: 0.2s; }
+    .top-bar .social-icons i:hover { color: #ffb347; transform: translateY(-2px); }
+    .navbar {
+      background: rgba(10, 25, 45, 0.92) !important;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 12px 0;
+    }
+    .navbar-brand { font-weight: 700; font-size: 1.7rem; letter-spacing: -0.5px; color: #fff !important; }
+    .navbar-brand span { color: #ffb347; }
+    .nav-link {
+      color: #e0e8f0 !important;
+      font-weight: 500;
+      margin: 0 8px;
+      position: relative;
+      transition: 0.2s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0%;
+      height: 2px;
+      background: #ffb347;
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after, .nav-link.active::after { width: 70%; }
+    .nav-link:hover, .nav-link.active { color: #fff !important; }
+    .page-section { display: none; }
+    .page-section.active-section { display: block; }
+
+    /* original home styles */
+    .hero {
+      background: linear-gradient(135deg, rgba(6, 22, 45, 0.85), rgba(2, 18, 40, 0.9)), url('https://images.unsplash.com/photo-1581091226033-c5a3ef7c5b6c?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      padding: 100px 0;
+    }
+    .hero h1 { font-size: 3.7rem; font-weight: 700; line-height: 1.2; text-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    .hero .highlight { color: #ffb347; }
+    .hero p { font-size: 1.3rem; opacity: 0.9; }
+    .btn-cta {
+      background: #ffb347;
+      color: #0b1c2f;
+      font-weight: 600;
+      padding: 12px 36px;
+      border-radius: 40px;
+      border: none;
+      transition: 0.3s;
+      box-shadow: 0 10px 20px -8px rgba(255,180,71,0.4);
+    }
+    .btn-cta:hover { background: #ffa01e; transform: scale(1.05); color: #0b1c2f; }
+    .section-title {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #0b1c2f;
+      margin-bottom: 20px;
+    }
+    .section-subtitle { color: #4a5f7a; font-size: 1.2rem; margin-bottom: 50px; }
+    .bg-soft-light { background-color: #f0f4fa; }
+    .card-hover {
+      transition: 0.25s;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px -12px rgba(0,20,40,0.15);
+      overflow: hidden;
+    }
+    .card-hover:hover { transform: translateY(-12px); box-shadow: 0 25px 45px -12px rgba(0,20,80,0.25); }
+    .stat-number { font-size: 3rem; font-weight: 800; color: #0b1c2f; line-height: 1; }
+    .stat-label { color: #4a5f7a; font-weight: 500; }
+    .case-card { background: white; border-radius: 24px; padding: 30px; height: 100%; background: linear-gradient(145deg, #ffffff, #f4f7fc); }
+    .product-icon { width: 60px; height: 60px; background: #ffb34720; border-radius: 18px; display: flex; align-items: center; justify-content: center; color: #ffb347; font-size: 2rem; margin-bottom: 20px; }
+    .blog-card .date-badge { background: #0b1c2f; color: white; padding: 5px 14px; border-radius: 40px; font-size: 0.8rem; display: inline-block; }
+    .footer {
+      background: #0b1c2f;
+      color: #b0c4de;
+      padding: 60px 0 30px;
+    }
+    .footer h5 { color: white; font-weight: 600; margin-bottom: 25px; }
+    .footer a { color: #b0c4de; text-decoration: none; display: block; margin-bottom: 8px; transition: 0.2s; }
+    .footer a:hover { color: #ffb347; padding-left: 5px; }
+    .footer-bottom { border-top: 1px solid #1e2f44; padding-top: 25px; margin-top: 40px; }
+    .back-to-top {
+      position: fixed; bottom: 30px; right: 30px; background: #ffb347; color: #0b1c2f;
+      width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; opacity: 0; visibility: hidden; transition: 0.3s; cursor: pointer; z-index: 99;
+    }
+    .back-to-top.show { opacity: 1; visibility: visible; }
+    .back-to-top:hover { background: #ffa01e; transform: scale(1.1); }
+    .navbar-toggler { border: 1px solid #b0c4de; }
+    .navbar-toggler-icon { filter: invert(1); }
+    .filter-pill {
+      background: white;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #0b1c2f;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: 0.2s;
+      cursor: default;
+      display: inline-block;
+    }
+    .filter-pill i { color: #ffb347; margin-right: 6px; }
+    .filter-pill small { color: #6c7e9e; font-weight: 400; }
+    .team-quote {
+      background: #0b1c2f;
+      color: white;
+      border-radius: 40px;
+      padding: 40px;
+      background-image: radial-gradient(circle at 10% 30%, #1e3a5f 0%, #0b1c2f 90%);
+    }
+    .brand-logo-placeholder {
+      background: white;
+      border-radius: 16px;
+      padding: 20px 10px;
+      text-align: center;
+      font-weight: 600;
+      color: #0b1c2f;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+      transition: 0.2s;
+      border: 1px solid #e9edf2;
+    }
+    .brand-logo-placeholder:hover { transform: scale(1.03); background: #ffb34710; }
+    .linkedin-badge {
+      background: #0077b5;
+      color: white;
+      border-radius: 40px;
+      padding: 8px 25px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .linkedin-badge:hover { background: #005e93; color: white; }
+
+    /* === NEW PRODUCT PAGE STYLES (added, not conflicting) === */
+    .product-hero {
+      background: linear-gradient(115deg, #0b1c2f 0%, #1b3b5c 100%), url('https://images.unsplash.com/photo-1581091226033-d5c3a5b8c4b6?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+      background-blend-mode: overlay;
+      padding: 100px 0 80px;
+      color: white;
+    }
+    .product-icon-lg { font-size: 2.5rem; color: #ffb347; background: rgba(255,180,71,0.1); width: 80px; height: 80px; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+    .step-card { background: white; border-radius: 30px; padding: 30px 25px; height: 100%; border: 1px solid rgba(0,0,0,0.02); }
+    .badge-step { background: #0b1c2f; color: white; font-size: 1.2rem; font-weight: 700; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .trust-card { background: white; border-radius: 40px; padding: 40px; background-image: radial-gradient(circle at 70% 20%, rgba(255,180,71,0.1) 0%, transparent 70%); }
+    .brand-pill { background: white; border-radius: 60px; padding: 15px 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.2s; display: inline-block; }
+    .brand-pill:hover { background: #ffb347; color: #0b1c2f; transform: scale(1.02); }
+
+    /* === NEW BLOG BACKGROUND === */
+    .blog-enhanced {
+      background: linear-gradient(rgba(240, 244, 250, 0.92), rgba(240, 244, 250, 0.92)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
+      padding: 80px 0;
+    }
+    .blog-card-img {
+      height: 180px;
+      object-fit: cover;
+      width: 100%;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    .blog-category-badge {
+      background-color: #0b1c2f;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      display: inline-block;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+    .blog-date {
+      color: #6c7e9e;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* === NEW STYLES FOR ENHANCED CONTACT PAGE === */
+    .contact-hero {
+      background: linear-gradient(115deg, #0b1c2f 0%, #1b3b5c 100%), url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074&auto=format&fit=crop') center/cover no-repeat;
+      background-blend-mode: overlay;
+      padding: 100px 0 80px;
+      color: white;
+      margin-bottom: 0;
+    }
+    .stat-card {
+      background: white;
+      border-radius: 30px;
+      padding: 30px 20px;
+      box-shadow: 0 15px 30px -10px rgba(0,20,40,0.1);
+      transition: 0.3s;
+    }
+    .stat-card:hover { transform: translateY(-8px); box-shadow: 0 25px 45px -10px rgba(0,20,80,0.2); }
+    .team-note {
+      background: rgba(255,180,71,0.05);
+      border-left: 4px solid #ffb347;
+      padding: 20px;
+      border-radius: 16px;
+      margin-top: 20px;
+    }
+    .testimonial-card {
+      background: white;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 15px 30px -10px rgba(0,20,40,0.08);
+      height: 100%;
+      transition: 0.3s;
+    }
+    .testimonial-card:hover { transform: scale(1.02); }
+    .contact-form-wrapper {
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      border-radius: 40px;
+      padding: 40px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+    }
+    .feature-icon-lg {
+      width: 80px;
+      height: 80px;
+      background: rgba(255,180,71,0.1);
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: #ffb347;
+      margin: 0 auto 20px;
+    }
+
+    /* new map container */
+    .map-container {
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -10px rgba(0,20,40,0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- top bar unchanged (company name appears in meta, but we can add small mention) -->
+  <div class="top-bar">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <div class="contact-info">
+        <a href="tel:+919423865420"><i class="bi bi-telephone-fill me-1"></i> (+91) 94238-65420</a>
+        <a href="mailto:info@wathare.com"><i class="bi bi-envelope-fill me-1"></i> info@wathare.com</a>
+        <span><i class="bi bi-geo-alt-fill me-1"></i> E-3/4, MIDC, Satara</span>
+      </div>
+      <div class="right-links d-flex align-items-center">
+        <a href="#" class="me-3">Help Desk</a>
+        <a href="#" class="me-3">Resources</a>
+        <a href="#" class="me-3">Get In Touch</a>
+        <div class="social-icons ms-2">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-linkedin"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- sticky navbar unchanged -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Wathare Infotech Solutions<span>.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME section (unchanged but add extra trust bar) -->
+  <section id="home" class="page-section">
+    <div class="hero">
+      <div class="container">
+        <div class="row align-items-center" data-aos="fade-up" data-aos-duration="1000">
+          <div class="col-lg-8">
+            <h1>We help you <span class="highlight">understand</span> your machines.<br>Sit back and relax.</h1>
+            <p class="my-4 fs-3">Industry 4.0 is closer than we think.</p>
+            <p class="lead w-75">We help you connect your machines to the internet and generate reports on efficiency and utilization.<br>With possibility of additional production, digitization of manufacturing assets will utilize existing infrastructure to the fullest. Understanding operator workflows, downtime on the machines and viewing and managing infrastructure remotely.</p>
+            <a href="#" class="btn btn-cta mt-3">LEARN MORE ABOUT WHAT WE DO <i class="bi bi-arrow-right ms-2"></i></a>
+          </div>
+          <div class="col-lg-4 text-center mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
+            <div class="bg-white p-4 rounded-4 shadow-lg bg-opacity-10 backdrop-blur">
+              <div class="stat-number text-white">7k+</div>
+              <div class="stat-label text-white-50">Tags connected</div>
+              <div class="stat-number mt-3 text-white">15%</div>
+              <div class="stat-label text-white-50">OEE increase</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Outsourced chief production supervisor -->
+    <div class="py-5 bg-white">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <span class="badge bg-warning text-dark mb-3">OUTSOURCED CHIEF PRODUCTION SUPERVISOR</span>
+            <h2 class="section-title">All production teams love our systems, they enjoy not doing the paperwork</h2>
+            <div class="row mt-4 g-3">
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Multiple user roles</div>
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Cloud AND Offline</div>
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Maintenance scheduling</div>
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Completely dynamic reporting</div>
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Multi platform availability</div>
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> API Integration</div>
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Reduce costs</div>
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Hierarchial accounts</div>
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Documentation</div>
+            </div>
+            <p class="mt-4 fw-semibold">System so beautiful, everyone gets addicted to it – available on Browser, App and even Smart Speaker.</p>
+            <a href="#" class="btn btn-outline-warning mt-3 rounded-pill px-4"><i class="bi bi-grid-3x3-gap-fill me-2"></i>Explore Portfolio</a>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <img src="https://wathare.com/wp-content/uploads/2019/03/image-parallax.png" class="img-fluid rounded-5 shadow" alt="dashboard">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- With auto alerts and notifications -->
+    <div class="py-5 bg-soft-light" style="background: linear-gradient(135deg, #e8eef5 0%, #d9e2ef 100%);">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="position-relative">
+              <img src="https://wathare.com/wp-content/uploads/2019/03/img3.png" class="img-fluid rounded-4 shadow-lg" alt="notifications">
+              <div class="position-absolute bottom-0 start-0 p-3 m-3 bg-dark bg-opacity-75 text-white rounded-3 d-flex align-items-center" style="backdrop-filter: blur(4px);">
+                <i class="bi bi-bell-fill text-warning me-2 fs-4"></i>
+                <span><strong>real-time alerts</strong> on mobile, mail & voice</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <h2 class="section-title">With auto alerts and notifications, ramp up your growth</h2>
+            <p class="fs-5">Automatic notifications on mobile app, SMS, email and smart speakers will make sure that your production plant is on the toes even when you are not there.</p>
+            <div class="d-flex gap-3 mt-4">
+              <span class="badge bg-dark text-white p-3"><i class="bi bi-phone me-2"></i>Mobile App</span>
+              <span class="badge bg-dark text-white p-3"><i class="bi bi-envelope me-2"></i>Email</span>
+              <span class="badge bg-dark text-white p-3"><i class="bi bi-amazon me-2"></i>Alexa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Stats row -->
+    <div class="py-5 bg-white">
+      <div class="container">
+        <div class="row text-center g-4">
+          <div class="col-md-3 col-6" data-aos="zoom-in"><div class="stat-number">250+</div><div class="stat-label">Projects Delivered</div></div>
+          <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="50"><div class="stat-number">12</div><div class="stat-label">Experts Team</div></div>
+          <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="100"><div class="stat-number">15k</div><div class="stat-label">Downloads</div></div>
+          <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="150"><div class="stat-number">2k</div><div class="stat-label">Business Accounts</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- Case studies with filter pills -->
+    <div class="py-5 bg-soft-light">
+      <div class="container">
+        <h2 class="section-title text-center">Case Studies</h2>
+        <p class="section-subtitle text-center">Read Some of The Selected Cases We Worked On</p>
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" data-aos="fade-in">
+          <span class="filter-pill"><i class="bi bi-funnel"></i> All <small>3</small></span>
+          <span class="filter-pill"><i class="bi bi-lightning-charge"></i> Energy Monitoring <small>1</small></span>
+          <span class="filter-pill"><i class="bi bi-cpu"></i> Machine Monitoring IIOT <small>2</small></span>
+          <span class="filter-pill"><i class="bi bi-graph-up"></i> Predictive Maintenance <small>1</small></span>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="flip-left"><div class="case-card">🏭 Leading Engineering Component Manufacturer and Exporter in Satara</div></div>
+          <div class="col-md-4" data-aos="flip-left" data-aos-delay="70"><div class="case-card">🚜 Leading Tractor Component Manufacturer in Kolhapur</div></div>
+          <div class="col-md-4" data-aos="flip-left" data-aos-delay="140"><div class="case-card">⚙️ Leading Auto Component Manufacturer in Pune</div></div>
+        </div>
+        <div class="text-center mt-5" data-aos="zoom-in-up">
+          <h3 class="fw-bold text-dark">Revolutionize the way you run your processes</h3>
+          <p class="fs-5 text-secondary">Join the best companies <i class="bi bi-arrow-right-circle-fill text-warning ms-2"></i></p>
+        </div>
+      </div>
+    </div>
+    <!-- extra trust bar: logos of certifications -->
+    <div class="py-4 bg-white">
+      <div class="container">
+        <p class="text-center text-secondary mb-3">Trusted by industry leaders & certified</p>
+        <div class="d-flex flex-wrap justify-content-center gap-4">
+          <span class="badge bg-light text-dark p-3 rounded-pill"><i class="bi bi-patch-check-fill text-warning me-2"></i>ISO 9001:2025</span>
+          <span class="badge bg-light text-dark p-3 rounded-pill"><i class="bi bi-shield-fill-check text-warning me-2"></i>MSME Registered</span>
+          <span class="badge bg-light text-dark p-3 rounded-pill"><i class="bi bi-award-fill text-warning me-2"></i>Startup India</span>
+          <span class="badge bg-light text-dark p-3 rounded-pill"><i class="bi bi-gem text-warning me-2"></i>Nasscom Member</span>
+        </div>
+      </div>
+    </div>
+    <!-- FAQ -->
+    <div class="py-5 bg-white">
+      <div class="container">
+        <h2 class="section-title text-center">Frequently asked questions</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    01 How does IIOT (Industrial IOT) work?
+                  </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    <p>The Industrial Internet of Things (IIoT) refers to the use of connected devices and sensors to collect and analyze data in industrial settings. These devices and sensors are connected to the internet and are able to communicate with each other and with central systems, allowing for the collection and analysis of real-time data.</p>
+                    <p>Here’s how IIoT typically works:</p>
+                    <ul>
+                      <li>Sensors and devices are installed on industrial equipment, machines, and other assets. These devices can include things like temperature sensors, vibration sensors, and other types of sensors that can collect data on the performance and condition of the assets.</li>
+                      <li>The sensors and devices transmit the data they collect to a central system, such as a cloud platform or on-premises server.</li>
+                      <li>The data is then processed and analyzed using software tools and algorithms. This can be used to identify patterns, trends, and anomalies that can help improve operations, predict maintenance needs, and optimize performance.</li>
+                      <li>The insights and data generated by the IIoT system can be used to inform decision-making and drive operational improvements. This might involve adjusting equipment settings, scheduling maintenance, or making other changes to improve efficiency and productivity.</li>
+                    </ul>
+                    <p>Overall, IIoT systems allow for the real-time collection and analysis of data from connected devices and sensors, enabling businesses to optimize operations, improve efficiency, and make data-driven decisions.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    02 Is IIOT for me?
+                  </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">If you run a manufacturing unit, have machines, and want to reduce downtime, improve OEE – yes. We tailor solutions for SMEs to large enterprises.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    03 Will you train our team?
+                  </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">Absolutely. We provide complete training for operators, supervisors, and engineers. Onsite and remote sessions.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    04 What is it available on?
+                  </button>
+                </h2>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">Our dashboards are available on browser, mobile app (Android/iOS), and even smart speakers like Alexa for voice alerts.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT section (unchanged, but add leadership cards) -->
+  <section id="about" class="page-section">
+    <div style="background: #f0f4fa url('https://www.transparenttextures.com/patterns/cartographer.png');">
+      <div class="container py-5">
+        <!-- row 1: headline + founder intro + image -->
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <span class="badge bg-warning text-dark mb-3">ABOUT US. WHAT WE DO</span>
+            <h2 class="section-title">We align your business objectives</h2>
+            <p class="fw-bold text-secondary">Trust Before Business</p>
+            <p class="mt-3">Wathare Infotech Solutions is a leading software development company, founded in 2017 by <strong>Sourabh Wathare</strong>. With a team of highly skilled and experienced professionals, we have established ourselves as a trusted partner to over 250 customers in the IIOT and consumer software domains.</p>
+            <p>Our primary focus is on delivering innovative and reliable software solutions that help our clients achieve their business goals. Whether you are a small startup or a large enterprise, we have the expertise and resources to help you succeed.</p>
+            <p>In addition to software development, we also offer a range of IIOT solutions to help businesses leverage the power of connected devices and data analytics. From remote monitoring and asset tracking to predictive maintenance and data-driven decision making, we can help you unlock the full potential of your IIOT investments.</p>
+            <p class="fw-semibold">At Wathare Infotech Solutions, we are passionate about helping our clients achieve success through cutting-edge technology. If you are looking for a reliable and experienced partner to help you achieve your business goals, look no further. Contact us today to learn more about how we can help you.</p>
+            <div class="d-flex align-items-center mt-4">
+              <a href="#" class="linkedin-badge me-3"><i class="bi bi-linkedin"></i> Follow Us On Linkedin</a>
+              <span class="text-secondary">| 1k+ followers</span>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" class="img-fluid rounded-5 shadow" alt="Wathare team">
+              <div class="position-absolute bottom-0 end-0 bg-white p-3 m-3 rounded-4 shadow-lg" style="max-width: 220px;">
+                <i class="bi bi-quote fs-1 text-warning"></i>
+                <p class="mb-0 fst-italic">"Expertise combined with personal commitment — that's our team's recipe for success. We manage to work with world's biggest names!"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- stats row -->
+        <div class="row my-5 g-4 text-center" data-aos="zoom-in">
+          <div class="col-md-4">
+            <div class="bg-white p-4 rounded-4 shadow-sm"><div class="stat-number">250+</div><div class="stat-label">Projects Delivered</div></div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-white p-4 rounded-4 shadow-sm"><div class="stat-number">12</div><div class="stat-label">Experts Team</div></div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-white p-4 rounded-4 shadow-sm"><div class="stat-number">15k</div><div class="stat-label">Downloads</div></div>
+          </div>
+        </div>
+        <!-- Meet the leadership (new) -->
+        <div class="py-4">
+          <h3 class="text-center mb-4">Meet our leadership</h3>
+          <div class="row g-4 justify-content-center">
+            <div class="col-md-3 col-6">
+              <div class="bg-white p-3 rounded-4 text-center"><img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mb-2" width="100"><h6>Sourabh Wathare</h6><small class="text-secondary">Founder & CEO</small></div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="bg-white p-3 rounded-4 text-center"><img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mb-2" width="100"><h6>Neha Deshmukh</h6><small class="text-secondary">CTO</small></div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="bg-white p-3 rounded-4 text-center"><img src="https://randomuser.me/api/portraits/men/62.jpg" class="rounded-circle mb-2" width="100"><h6>Rohan Patil</h6><small class="text-secondary">Head of IIoT</small></div>
+            </div>
+          </div>
+        </div>
+        <!-- LET'S WORK TOGETHER -->
+        <div class="team-quote my-5" data-aos="flip-up">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h3 class="text-white"><i class="bi bi-hand-thumbs-up-fill text-warning me-2"></i> LET'S WORK TOGETHER, but first</h3>
+              <h4 class="text-warning">How can we build your business?</h4>
+              <p class="text-white-50">Overall, Wathare Infotech Solutions can help you build your business by providing a range of high-quality software development and IIOT solutions that are tailored to meet your specific needs.</p>
+              <div class="row mt-3 g-3">
+                <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Software Development</div>
+                <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> IIOT Solutions</div>
+                <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Business Automation</div>
+                <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Technology Consulting</div>
+              </div>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+              <a href="#contact" class="btn btn-warning rounded-pill px-5 py-3 fw-bold">START A CONVERSATION</a>
+            </div>
+          </div>
+        </div>
+        <!-- Brands / Key Users -->
+        <h3 class="text-center mt-5" data-aos="fade">Brands We Work With · Our Key Users</h3>
+        <div class="row g-3 my-4 justify-content-center" data-aos="fade-up">
+          <div class="col-6 col-md-2"><div class="brand-logo-placeholder"><i class="bi bi-cpu fs-2 d-block"></i> Siemens</div></div>
+          <div class="col-6 col-md-2"><div class="brand-logo-placeholder"><i class="bi bi-truck fs-2 d-block"></i> Tata Motors</div></div>
+          <div class="col-6 col-md-2"><div class="brand-logo-placeholder"><i class="bi bi-gear fs-2 d-block"></i> Kirloskar</div></div>
+          <div class="col-6 col-md-2"><div class="brand-logo-placeholder"><i class="bi bi-bricks fs-2 d-block"></i> Mahindra</div></div>
+          <div class="col-6 col-md-2"><div class="brand-logo-placeholder"><i class="bi bi-ev-station fs-2 d-block"></i> Bajaj Auto</div></div>
+          <div class="col-6 col-md-2"><div class="brand-logo-placeholder"><i class="bi bi-building fs-2 d-block"></i> Finolex</div></div>
+        </div>
+        <!-- Testimonials -->
+        <div class="bg-white p-5 rounded-5 shadow mt-5" data-aos="fade-right">
+          <h3 class="section-subtitle text-center mb-4">What our customers think</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="fst-italic border-start border-warning border-4 ps-4">"I have been working with Wathare Group for 7 years now and they have never let me down ... redefining the way we use internet."<br>– Shubham Pawar, Sethu FPC</div>
+            </div>
+            <div class="col-md-6">
+              <div class="fst-italic border-start border-warning border-4 ps-4">"WIS has shortest lead time, variety of ideas ... helped my business simpler!"<br>– Pratik Deo, Vizyug</div>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-warning rounded-pill">See all case studies <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS section (expanded: 4 new cards added) -->
+  <section id="products" class="page-section">
+    <!-- Hero unchanged -->
+    <div class="product-hero" data-aos="fade">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <span class="badge bg-warning text-dark mb-3 fs-6">INDUSTRY 4.0 PORTFOLIO</span>
+            <h1 class="display-4 fw-bold">Products that redefine <span class="text-warning">industrial intelligence</span></h1>
+            <p class="lead fs-3 my-4">Preparing for a new global economy · Highly engaging, even more results driven.</p>
+            <a href="#product-grid" class="btn btn-cta me-3">EXPLORE ALL PRODUCTS <i class="bi bi-arrow-right ms-2"></i></a>
+            <a href="#contact" class="btn btn-outline-light rounded-pill px-4 py-2">GET STARTED</a>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-5 mt-lg-0" data-aos="fade-left">
+            <img src="https://wathare.com/wp-content/uploads/2019/03/image-parallax.png" alt="dashboard preview" class="img-fluid rounded-4 shadow-lg" style="max-height: 280px;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid (original 8 + 4 new = 12) -->
+    <div class="container py-5" id="product-grid">
+      <h2 class="section-title text-center" data-aos="zoom-in">Our solutions</h2>
+      <p class="section-subtitle text-center">IIoT · Machine Monitoring · Digital tools for modern manufacturing</p>
+      <div class="row g-4">
+        <!-- card 1: IIOT (keep same) -->
+        <div class="col-md-6 col-lg-3" data-aos="flip-left">
+          <div class="card-hover bg-white p-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3_Grz3bZl8_UTVZVkuNAFmUsJOHmDdVAxTg&s" class="img-fluid rounded-4 mb-3" style="height:160px; width:100%; object-fit:cover;" alt="IIoT">
+            <div class="product-icon-lg"><i class="bi bi-motherboard"></i></div>
+            <h4>IIoT / Industry 4.0</h4>
+            <p class="text-secondary">Machine Monitoring System — realtime OEE, downtime, utilization. Connect any legacy machine.</p>
+            <span class="badge bg-dark me-1">Edge ready</span> <span class="badge bg-warning text-dark">analytics</span>
+            <div class="mt-3"><a href="#" class="fw-semibold text-warning">READ MORE <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+        <!-- card 2: Analysis -->
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="50">
+          <div class="card-hover bg-white p-3">
+            <img src="https://edgecrm-test.sgp1.digitaloceanspaces.com/12grids-cms/p/blogs/cover/original_image/website-analysis-12grids_image_1c980d95-88c5-4.jpg" class="img-fluid rounded-4 mb-3" style="height:160px; width:100%; object-fit:cover;" alt="Data analysis">
+            <div class="product-icon-lg"><i class="bi bi-bar-chart-steps"></i></div>
+            <h4>Analysis</h4>
+            <p class="text-secondary">Machine Data Exploration · Efficiency improvement with custom dashboards and drill-down reports.</p>
+            <span class="badge bg-dark me-1">AI assisted</span>
+            <div class="mt-3"><a href="#" class="fw-semibold text-warning">READ MORE <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+        <!-- card 3: Matrimony -->
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="100">
+          <div class="card-hover bg-white p-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS0l30wcbOrsrgBQPditjwtDDqkhY78iaMgQ&s" class="img-fluid rounded-4 mb-3" style="height:160px; width:100%; object-fit:cover;" alt="Matrimony app">
+            <div class="product-icon-lg"><i class="bi bi-heart"></i></div>
+            <h4>Matrimony Platform</h4>
+            <p class="text-secondary">16k+ registered users. Community‑focused matchmaking with advanced privacy and filters.</p>
+            <span class="badge bg-dark me-1">SaaS</span>
+            <div class="mt-3"><a href="#" class="fw-semibold text-warning">READ MORE <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+        <!-- card 4: Website Development -->
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="150">
+          <div class="card-hover bg-white p-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz82P7arPhimfuw4OK3-hgk3iVCpP787T8yA&s" class="img-fluid rounded-4 mb-3" style="height:160px; width:100%; object-fit:cover;" alt="web dev">
+            <div class="product-icon-lg"><i class="bi bi-code-slash"></i></div>
+            <h4>Website Development</h4>
+            <p class="text-secondary">From ₹2k basic websites to enterprise portals. Fully responsive, SEO optimised.</p>
+            <span class="badge bg-dark me-1">e‑commerce</span>
+            <div class="mt-3"><a href="#" class="fw-semibold text-warning">READ MORE <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+        <!-- card 5: Predictive Maintenance -->
+        <div class="col-md-6 col-lg-3" data-aos="flip-left">
+          <div class="card-hover bg-white p-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuQlJRqC2mRa_rh0BVbTsc5AMVtKQo80sFeQ&s" class="img-fluid rounded-4 mb-3" style="height:160px; width:100%; object-fit:cover;" alt="predictive maint">
+            <div class="product-icon-lg"><i class="bi bi-exclamation-triangle"></i></div>
+            <h4>Predictive Maintenance</h4>
+            <p class="text-secondary">Vibration, temperature, pressure monitoring. AI models predict failures before they happen.</p>
+            <span class="badge bg-dark me-1">condition based</span>
+            <div class="mt-3"><a href="#" class="fw-semibold text-warning">READ MORE <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+        <!-- card 6: Microservices -->
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="50">
+          <div class="card-hover bg-white p-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwLYExzSj0FYAcO7fpQ8iSh0w7NMLmvJ3SFA&s" class="img-fluid rounded-4 mb-3" style="height:160px; width:100%; object-fit:cover;" alt="microservices">
+            <div class="product-icon-lg"><i class="bi bi-stack"></i></div>
+            <h4>Microservices</h4>
+            <p class="text-secondary">Scalable standalone apps, containerised, API‑first. Perfect for modular growth.</p>
+            <span class="badge bg-dark me-1">Kubernetes</span>
+            <div class="mt-3"><a href="#" class="fw-semibold text-warning">READ MORE <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+        <!-- card 7: WIS-EMA -->
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="100">
+          <div class="card-hover bg-white p-3">
+            <img src="https://i.ytimg.com/vi/NNQWZf1FQyE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDpdXkfO6-m8beYCN9VUepAgFj7Bg" class="img-fluid rounded-4 mb-3" style="height:160px; width:100%; object-fit:cover;" alt="email marketing">
+            <div class="product-icon-lg"><i class="bi bi-envelope-paper"></i></div>
+            <h4>WIS-EMA</h4>
+            <p class="text-secondary">Email Marketing Application — automate campaigns, track opens & clicks, design templates.</p>
+            <span class="badge bg-dark me-1">marketing</span>
+            <div class="mt-3"><a href="#" class="fw-semibold text-warning">READ MORE <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+        <!-- card 8: 2k Website -->
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="150">
+          <div class="card-hover bg-white p-3">
+            <img src="https://c0.wallpaperflare.com/preview/944/356/969/concept-construction-page-site.jpg" class="img-fluid rounded-4 mb-3" style="height:160px; width:100%; object-fit:cover;" alt="budget website">
+            <div class="product-icon-lg"><i class="bi bi-brush"></i></div>
+            <h4>2k Website</h4>
+            <p class="text-secondary">Professional website starting ₹2000. Ideal for small businesses, quick launch.</p>
+            <span class="badge bg-dark me-1">budget</span>
+            <div class="mt-3"><a href="#" class="fw-semibold text-warning">READ MORE <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+        <!-- NEW CARD 9: Energy Monitoring -->
+        <div class="col-md-6 col-lg-3" data-aos="flip-left">
+          <div class="card-hover bg-white p-3">
+            <img src="https://images.ctfassets.net/fevtq3bap7tj/4Z3xdca3bymwimUoa408Ck/8c3bf8a8d2335a9613131d03c650131b/Energy_Dashboard_2x.jpg.png" class="img-fluid rounded-4 mb-3" style="height:160px; width:100%; object-fit:cover;" alt="Energy Monitoring">
+            <div class="product-icon-lg"><i class="bi bi-lightning-charge"></i></div>
+            <h4>Energy Monitoring</h4>
+            <p class="text-secondary">Track power consumption, identify wastage, and optimize energy usage with real-time dashboards.</p>
+            <span class="badge bg-dark me-1">sub-metering</span>
+            <div class="mt-3"><a href="#" class="fw-semibold text-warning">READ MORE <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+        <!-- NEW CARD 10: Asset Tracking -->
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="50">
+          <div class="card-hover bg-white p-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQKtkK8HrCSJ2pVYs0NOh2EkHLudKX_L7qrA&s" class="img-fluid rounded-4 mb-3" style="height:160px; width:100%; object-fit:cover;" alt="Asset Tracking">
+            <div class="product-icon-lg"><i class="bi bi-geo-alt"></i></div>
+            <h4>Asset Tracking</h4>
+            <p class="text-secondary">GPS + IoT based tracking for vehicles, tools, and high-value assets. Geofencing and alerts.</p>
+            <span class="badge bg-dark me-1">real-time</span>
+            <div class="mt-3"><a href="#" class="fw-semibold text-warning">READ MORE <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+        <!-- NEW CARD 11: Quality Management -->
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="100">
+          <div class="card-hover bg-white p-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzUM1toZt1nkLoJqIA6WAQIfRpe2pL77lqxg&s" class="img-fluid rounded-4 mb-3" style="height:160px; width:100%; object-fit:cover;" alt="Quality Management">
+            <div class="product-icon-lg"><i class="bi bi-clipboard-check"></i></div>
+            <h4>Quality Management</h4>
+            <p class="text-secondary">Digital SPC, defect tracking, and real-time quality alerts to reduce scrap and rework.</p>
+            <span class="badge bg-dark me-1">SPC</span>
+            <div class="mt-3"><a href="#" class="fw-semibold text-warning">READ MORE <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+        <!-- NEW CARD 12: Supply Chain Visibility -->
+        <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="150">
+          <div class="card-hover bg-white p-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUqrMHcVecYeoSJ93rNWD9DTKjjFKrF-6GWw&s" class="img-fluid rounded-4 mb-3" style="height:160px; width:100%; object-fit:cover;" alt="Supply Chain">
+            <div class="product-icon-lg"><i class="bi bi-truck"></i></div>
+            <h4>Supply Chain Visibility</h4>
+            <p class="text-secondary">End-to-end tracking of materials, inventory, and logistics with predictive ETAs.</p>
+            <span class="badge bg-dark me-1">logistics</span>
+            <div class="mt-3"><a href="#" class="fw-semibold text-warning">READ MORE <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your Digital Partner (process + image) unchanged -->
+    <div class="bg-soft-light py-5" style="background: linear-gradient(145deg, #e9eff8, #dbe3f0);">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h2 class="section-title">YOUR DIGITAL PARTNER</h2>
+            <p class="fs-4 fw-semibold">Solve more workflow problems</p>
+            <p>We help startups to ideate, design, develop, evaluate and launch apps keeping in mind their expectations and constraints with regard to costs and timelines. Using agile methodologies, we deliver world-class mobile and web apps with swift design, development and deployment.</p>
+            <a href="#contact" class="btn btn-cta mt-3">CONTACT US <i class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" class="img-fluid rounded-5 shadow-lg" alt="team collaboration">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Assessment / Implementation / Monitoring steps (unchanged) -->
+    <div class="container py-5">
+      <div class="row text-center mb-4">
+        <h2 class="section-title">How we deliver</h2>
+        <p class="section-subtitle">Proven process from concept to value</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="step-card">
+            <div class="badge-step">01</div>
+            <i class="bi bi-clipboard-data fs-1 text-warning"></i>
+            <h4 class="mt-3">Assessment</h4>
+            <p>Analyze current workflow, identify improvement areas, and define the best IIoT / software solutions tailored to your operations.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="70">
+          <div class="step-card">
+            <div class="badge-step">02</div>
+            <i class="bi bi-gear-wide-connected fs-1 text-warning"></i>
+            <h4 class="mt-3">Implementation</h4>
+            <p>Configure software, install sensors and gateways, integrate with existing systems, and train your team for smooth adoption.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="140">
+          <div class="step-card">
+            <div class="badge-step">03</div>
+            <i class="bi bi-graph-up-arrow fs-1 text-warning"></i>
+            <h4 class="mt-3">Monitoring & Optimization</h4>
+            <p>Real‑time monitoring, periodic health checks, data analysis, and continuous tuning to maximize your ROI.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust & integrity (unchanged) -->
+    <div class="container py-4">
+      <div class="trust-card" data-aos="zoom-in">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h3 class="fw-bold">Trust & integrity: Our recipe for success</h3>
+            <p class="text-secondary">Our aim is to be flexible and listen to our clients needs in order to gain a full understanding of the challenges they face.</p>
+            <div class="row mt-4 g-3">
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Machine Monitoring (OEE, utilization)</div>
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Predictive Maintenance</div>
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Quality Management & traceability</div>
+              <div class="col-6"><i class="bi bi-check-circle-fill text-warning me-2"></i> Energy analytics</div>
+            </div>
+            <p class="mt-4 fw-semibold">"We manage to work with world's biggest names – expertise combined with personal commitment."</p>
+            <a href="#" class="btn btn-outline-warning rounded-pill px-4 mt-2">LEARN MORE <i class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="col-lg-5 text-center mt-4 mt-lg-0">
+            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop" class="img-fluid rounded-5 shadow" alt="factory floor">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brands we work with (light version) -->
+    <div class="container py-4 text-center">
+      <h4 class="fw-semibold mb-4">Trusted by leading manufacturers</h4>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <span class="brand-pill"><i class="bi bi-cpu me-2"></i>Siemens</span>
+        <span class="brand-pill"><i class="bi bi-truck me-2"></i>Tata Motors</span>
+        <span class="brand-pill"><i class="bi bi-gear me-2"></i>Kirloskar</span>
+        <span class="brand-pill"><i class="bi bi-bricks me-2"></i>Mahindra</span>
+        <span class="brand-pill"><i class="bi bi-ev-station me-2"></i>Bajaj Auto</span>
+        <span class="brand-pill"><i class="bi bi-building me-2"></i>Finolex</span>
+      </div>
+    </div>
+
+    <!-- Final CTA (estimate + jobs) unchanged -->
+    <div class="container py-5" data-aos="fade-up">
+      <div class="bg-dark text-white p-5 rounded-5" style="background: linear-gradient(145deg, #0f2a44, #0b1c2f);">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h3 class="text-warning">Get an estimate of your project’s time and costs.</h3>
+            <p class="mb-0">We help startups and enterprises ideate, design, and launch. Fast turnaround, transparent pricing.</p>
+          </div>
+          <div class="col-md-4 text-md-end mt-3 mt-md-0">
+            <a href="#contact" class="btn btn-warning rounded-pill px-5 py-3 fw-bold">GET IN TOUCH</a>
+            <p class="mt-2">Looking for a job? <a href="#" class="text-white fw-semibold">See current openings <i class="bi bi-box-arrow-up-right"></i></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG section unchanged -->
+    <section id="blog" class="page-section">
+    <div class="blog-enhanced">
+      <div class="container">
+        <h2 class="section-title text-center" data-aos="zoom-in">Latest from Blog</h2>
+        <p class="section-subtitle text-center" data-aos="fade-up">Insights, stories and industry news from our team</p>
+        <div class="row g-4">
+          <!-- card 1: Hello world! -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+            <div class="card-hover bg-white h-100 d-flex flex-column">
+              <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop" class="blog-card-img" alt="Hello world">
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="mb-2">
+                  <span class="blog-category-badge">Uncategorized</span>
+                </div>
+                <div class="blog-date mb-2"><i class="bi bi-calendar3"></i> June 30, 2021</div>
+                <h5 class="fw-bold">Hello world!</h5>
+                <p class="text-secondary small flex-grow-1">Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+                <a href="#" class="text-warning fw-semibold text-decoration-none">Read more <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- card 2: 3 Habits of highly effective entrepreneurs (Business) -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="50">
+            <div class="card-hover bg-white h-100 d-flex flex-column">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" class="blog-card-img" alt="Entrepreneur habits">
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="mb-2">
+                  <span class="blog-category-badge">Business</span>
+                </div>
+                <div class="blog-date mb-2"><i class="bi bi-calendar3"></i> Jan 29, 2019</div>
+                <h5 class="fw-bold">3 Habits of highly effective entrepreneurs</h5>
+                <p class="text-secondary small flex-grow-1">Effectiveness comes down to producing desired results. The most successful entrepreneurs have mastered being effective...</p>
+                <a href="#" class="text-warning fw-semibold text-decoration-none">Read more <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- card 3: Improving productivity across global teams (Corporate) -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-hover bg-white h-100 d-flex flex-column">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" class="blog-card-img" alt="Global teams">
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="mb-2">
+                  <span class="blog-category-badge">Corporate</span>
+                </div>
+                <div class="blog-date mb-2"><i class="bi bi-calendar3"></i> Jan 29, 2019</div>
+                <h5 class="fw-bold">Improving productivity across global teams</h5>
+                <p class="text-secondary small flex-grow-1">Effectiveness comes down to producing desired results. Success cannot happen with any consistency when approached...</p>
+                <a href="#" class="text-warning fw-semibold text-decoration-none">Read more <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- card 4: How to start a business as a college student (Ecommerce) -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="card-hover bg-white h-100 d-flex flex-column">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" class="blog-card-img" alt="College student">
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="mb-2">
+                  <span class="blog-category-badge">Ecommerce</span>
+                </div>
+                <div class="blog-date mb-2"><i class="bi bi-calendar3"></i> Jan 29, 2019</div>
+                <h5 class="fw-bold">How to start a business as a college student</h5>
+                <p class="text-secondary small flex-grow-1">Effectiveness comes down to producing desired results. The most successful entrepreneurs have mastered being effective...</p>
+                <a href="#" class="text-warning fw-semibold text-decoration-none">Read more <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- card 5: 3 Habits of highly effective entrepreneurs (Survey) -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+            <div class="card-hover bg-white h-100 d-flex flex-column">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" class="blog-card-img" alt="Survey habits">
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="mb-2">
+                  <span class="blog-category-badge">Survey</span>
+                </div>
+                <div class="blog-date mb-2"><i class="bi bi-calendar3"></i> Oct 3, 2017</div>
+                <h5 class="fw-bold">3 Habits of highly effective entrepreneurs</h5>
+                <p class="text-secondary small flex-grow-1">Effectiveness comes down to producing desired results. The most successful entrepreneurs...</p>
+                <a href="#" class="text-warning fw-semibold text-decoration-none">Read more <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- card 6: Improving productivity across global teams (Corporate/Survey) -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="50">
+            <div class="card-hover bg-white h-100 d-flex flex-column">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop" class="blog-card-img" alt="Productivity teams">
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="mb-2">
+                  <span class="blog-category-badge">Corporate</span>
+                  <span class="blog-category-badge">Survey</span>
+                </div>
+                <div class="blog-date mb-2"><i class="bi bi-calendar3"></i> Oct 3, 2017</div>
+                <h5 class="fw-bold">Improving productivity across global teams</h5>
+                <p class="text-secondary small flex-grow-1">Effectiveness comes down to producing desired results. Success cannot happen with any consistency...</p>
+                <a href="#" class="text-warning fw-semibold text-decoration-none">Read more <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- card 7: How to start a business as a college student (Business/Ecommerce) -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-hover bg-white h-100 d-flex flex-column">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" class="blog-card-img" alt="Startup college">
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="mb-2">
+                  <span class="blog-category-badge">Business</span>
+                  <span class="blog-category-badge">Ecommerce</span>
+                </div>
+                <div class="blog-date mb-2"><i class="bi bi-calendar3"></i> Oct 3, 2017</div>
+                <h5 class="fw-bold">How to start a business as a college student</h5>
+                <p class="text-secondary small flex-grow-1">Effectiveness comes down to producing desired results. The most successful entrepreneurs...</p>
+                <a href="#" class="text-warning fw-semibold text-decoration-none">Read more <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- card 8: 3 Habits (another) -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="card-hover bg-white h-100 d-flex flex-column">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" class="blog-card-img" alt="Habits again">
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="mb-2">
+                  <span class="blog-category-badge">Business</span>
+                </div>
+                <div class="blog-date mb-2"><i class="bi bi-calendar3"></i> Oct 3, 2017</div>
+                <h5 class="fw-bold">3 Habits of highly effective entrepreneurs</h5>
+                <p class="text-secondary small flex-grow-1">Effectiveness comes down to producing desired results. The most successful entrepreneurs...</p>
+                <a href="#" class="text-warning fw-semibold text-decoration-none">Read more <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5" data-aos="zoom-in">
+          <a href="#" class="btn btn-cta">VIEW ALL ARTICLES <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION (enhanced with Google Map) -->
+  <section id="contact" class="page-section">
+    <div class="contact-hero" data-aos="fade">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 fw-bold text-white">Get in touch with our team</h1>
+            <p class="lead text-white-50 fs-3">Just Get In Touch · What can we help you with today?</p>
+            <p class="text-white fs-5">Small companies cannot have state of the art support. Well, looks like you haven't met us yet!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats row unchanged -->
+    <div class="container py-5">
+      <div class="row g-4 text-center">
+        <div class="col-md-4" data-aos="zoom-in"><div class="stat-card p-4"><div class="stat-number">120+</div><div class="stat-label">Partnerships</div></div></div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><div class="stat-card p-4"><div class="stat-number">250+</div><div class="stat-label">Projects Delivered</div></div></div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><div class="stat-card p-4"><div class="stat-number">2K</div><div class="stat-label">Business Accounts</div></div></div>
+      </div>
+    </div>
+
+    <!-- Three feature cards unchanged -->
+    <div class="container py-4">
+      <h2 class="section-title text-center" data-aos="zoom-in">Take your business to the next level</h2>
+      <p class="section-subtitle text-center" data-aos="fade-up">SERVICES we excel at</p>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up"><div class="step-card text-center p-4"><div class="feature-icon-lg"><i class="bi bi-lightbulb"></i></div><h4>Creation of Ideas</h4><p class="text-secondary">Brainstorming, mind mapping, and problem-solving techniques to spark innovation.</p></div></div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100"><div class="step-card text-center p-4"><div class="feature-icon-lg"><i class="bi bi-phone"></i></div><h4>Building Applications</h4><p class="text-secondary">From concept to deployment – agile development for mobile and web apps.</p></div></div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200"><div class="step-card text-center p-4"><div class="feature-icon-lg"><i class="bi bi-graph-up"></i></div><h4>Growth Stage</h4><p class="text-secondary">Scale your solution with IIoT, advanced analytics, and continuous optimization.</p></div></div>
+      </div>
+    </div>
+
+    <!-- Two column: Contact details + form, with map added below form -->
+    <div class="container py-5">
+      <div class="row g-5 align-items-start">
+        <!-- Left side unchanged -->
+        <div class="col-lg-6" data-aos="fade-right">
+          <h2 class="section-title">Just Get In Touch</h2>
+          <p class="fs-5">We'd love to hear from you. Fill out the form or reach us directly.</p>
+          <div class="d-flex mt-4"><i class="bi bi-headset fs-1 me-4 text-warning"></i><div><h5>Tech Support</h5><p>CALL 9423865420<br>sourabh@wathare.com</p></div></div>
+          <div class="d-flex mt-3"><i class="bi bi-receipt fs-1 me-4 text-warning"></i><div><h5>Account and Billing Help</h5><p>INVOICE HELP – info@wathare.com</p></div></div>
+          <div class="d-flex mt-3"><i class="bi bi-cash-stack fs-1 me-4 text-warning"></i><div><h5>Sales</h5><p>CALL 9421710962</p></div></div>
+          <div class="mt-4 position-relative">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" class="img-fluid rounded-4 shadow" alt="Our team">
+            <div class="team-note mt-3"><p class="mb-0 fw-semibold"><i class="bi bi-quote text-warning me-2"></i>The WIS Team is a fine assortment of planners, designers, strategists and digital enthusiasts.</p></div>
+          </div>
+        </div>
+
+        <!-- Right side: form + map -->
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="contact-form-wrapper">
+            <h4 class="mb-4">Send a message</h4>
+            <form>
+              <div class="mb-3"><input type="text" class="form-control form-control-lg rounded-pill" placeholder="Your Name"></div>
+              <div class="mb-3"><input type="tel" class="form-control form-control-lg rounded-pill" placeholder="Telephone"></div>
+              <div class="mb-3"><input type="email" class="form-control form-control-lg rounded-pill" placeholder="Email Address"></div>
+              <div class="mb-3"><textarea class="form-control rounded-4" rows="4" placeholder="How can we help?"></textarea></div>
+              <button class="btn btn-cta w-100 py-3">Send Message <i class="bi bi-send ms-2"></i></button>
+            </form>
+            <p class="text-muted small mt-3 text-center">We'll get back to you within 24 hours.</p>
+          </div>
+          <!-- GOOGLE MAP LOCATION (new) -->
+          <div class="mt-4 map-container" data-aos="fade-up">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.567114579147!2d73.995932314877!3d17.684946087678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc239ab8d5e7b5b%3A0x123456789abcdef!2sMIDC%20Satara%2C%20Maharashtra%20415004!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" width="100%" height="250" style="border:0; border-radius:30px;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="p-3 bg-white"><i class="bi bi-geo-alt-fill text-warning me-2"></i>Plot No. E-3/4, MIDC, Satara - 415004, Maharashtra</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exceptional Ideas unchanged -->
+    <div class="bg-soft-light py-5" style="background: linear-gradient(rgba(240,244,250,0.9), rgba(240,244,250,0.9)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop') center/cover fixed;">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7" data-aos="fade-right">
+            <h3 class="fw-bold">Exceptional Ideas</h3>
+            <p>There are many different ways to come up with new ideas, and the best approach will depend on the specific situation and goals.</p>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i><strong>Brainstorming:</strong> Classic group technique.</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i><strong>Mind mapping:</strong> Visual method to organize ideas.</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i><strong>Problem-solving techniques:</strong> Six Thinking Hats, SCAMPER.</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i><strong>Incubation:</strong> Let your mind wander.</li>
+            </ul>
+            <a href="#" class="btn btn-outline-warning rounded-pill px-4 py-2 mt-3">LEARN MORE <i class="bi bi-arrow-right ms-2"></i></a>
+          </div>
+          <div class="col-lg-5" data-aos="fade-left">
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop" class="img-fluid rounded-5 shadow-lg" alt="Creative team">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials unchanged -->
+    <div class="container py-5">
+      <h2 class="section-title text-center" data-aos="zoom-in">What our clients say</h2>
+      <div class="row g-4 mt-3">
+        <div class="col-md-6" data-aos="fade-right"><div class="testimonial-card"><i class="bi bi-quote fs-1 text-warning opacity-50"></i><p class="fst-italic fs-5">“I have been working with Wathare Group for 7 years now and they have never let me down.”</p><div class="d-flex align-items-center mt-3"><i class="bi bi-person-circle fs-3 me-3 text-secondary"></i><div><strong>Shubham Pawar</strong><br><span class="text-muted">MD, Sethu FPC</span></div></div></div></div>
+        <div class="col-md-6" data-aos="fade-left"><div class="testimonial-card"><i class="bi bi-quote fs-1 text-warning opacity-50"></i><p class="fst-italic fs-5">“Wathare Infotech Solutions has shortest lead time, variety of ideas that helped my business simpler!”</p><div class="d-flex align-items-center mt-3"><i class="bi bi-person-circle fs-3 me-3 text-secondary"></i><div><strong>Pratik Deo</strong><br><span class="text-muted">MD, Vizyug</span></div></div></div></div>
+      </div>
+    </div>
+
+    <!-- Final CTA unchanged -->
+    <div class="container py-4" data-aos="zoom-in-up">
+      <div class="bg-dark text-white p-5 rounded-5 text-center" style="background: linear-gradient(145deg, #0b1c2f, #0f2a44);">
+        <h3 class="text-warning display-6 fw-bold">Revolutionize the way you run your processes</h3>
+        <p class="lead">Join our growing community of 2K+ businesses.</p>
+        <a href="#contact" class="btn btn-cta btn-lg mt-3">GET STARTED TODAY <i class="bi bi-arrow-right ms-2"></i></a>
+        <p class="mt-3">Looking for a job? <a href="#" class="text-white fw-semibold text-decoration-underline">See current openings <i class="bi bi-box-arrow-up-right"></i></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (updated company name) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"><h5>Wathare Infotech Solutions</h5><p>Industry 4.0 · IIoT · Machine Monitoring<br>Plot No. E-3/4, MIDC, Satara<br>Pawar Colony, Shahupuri, Satara</p></div>
+        <div class="col-md-2"><h5>Quick Links</h5><a href="#about">About Us</a><a href="#products">Our Services</a><a href="#contact">Get a Quote</a><a href="#products">Products</a></div>
+        <div class="col-md-2"><h5>Resources</h5><a href="#">Marketplace</a><a href="#">Documentation</a><a href="#">Customers</a><a href="#">Careers</a></div>
+        <div class="col-md-4"><h5>Get an estimate</h5><p>We help startups ideate, design, develop.</p><a href="#contact" class="btn btn-outline-light">Get in Touch</a><p class="mt-3">Looking for a job? <a href="#">See openings</a></p></div>
+      </div>
+      <div class="footer-bottom d-flex justify-content-between">
+        <span>© 2025 Wathare Infotech Solutions. All rights reserved.</span>
+        <span><i class="bi bi-facebook me-2"></i><i class="bi bi-linkedin"></i></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- back to top -->
+  <div class="back-to-top" id="backToTop"><i class="bi bi-arrow-up-short"></i></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', ()=>{
+      if(window.scrollY > 500) backBtn.classList.add('show');
+      else backBtn.classList.remove('show');
+    });
+    backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+    // SPA navigation
+    const sections = document.querySelectorAll('.page-section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    function activateSection(targetId) {
+      sections.forEach(s => s.classList.remove('active-section'));
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) targetSection.classList.add('active-section');
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + targetId) link.classList.add('active');
+      });
+    }
+    window.addEventListener('hashchange', () => {
+      let hash = window.location.hash.substring(1);
+      if (!hash) hash = 'home';
+      activateSection(hash);
+    });
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const hash = link.getAttribute('href').substring(1);
+        window.location.hash = hash;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+    let initialHash = window.location.hash.substring(1);
+    if (!initialHash) initialHash = 'home';
+    activateSection(initialHash);
+  </script>
+</body>
+</html>
